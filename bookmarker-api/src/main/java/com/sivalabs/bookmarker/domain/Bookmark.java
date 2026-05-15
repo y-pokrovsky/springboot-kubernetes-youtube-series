@@ -24,5 +24,4 @@ public class Bookmark {
     @Column(nullable = false)
     private String url;
     private Instant createdAt;
-
 }
