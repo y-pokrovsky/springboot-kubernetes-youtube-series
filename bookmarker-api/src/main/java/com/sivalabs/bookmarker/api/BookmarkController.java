@@ -1,8 +1,12 @@
 package com.sivalabs.bookmarker.api;
 
+import com.sivalabs.bookmarker.domain.BookmarkDTO;
 import com.sivalabs.bookmarker.domain.BookmarkService;
 import com.sivalabs.bookmarker.domain.BookmarksDTO;
+import com.sivalabs.bookmarker.domain.CreateBookmarkRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,4 +25,9 @@ public class BookmarkController {
         return bookmarkService.searchBookmarks(query, page);
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public BookmarkDTO createBookmark(@RequestBody @Valid CreateBookmarkRequest request) {
+        return bookmarkService.createBookmark(request);
+    }
 }

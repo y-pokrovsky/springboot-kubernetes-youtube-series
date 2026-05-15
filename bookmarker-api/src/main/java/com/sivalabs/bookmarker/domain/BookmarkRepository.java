@@ -16,5 +16,5 @@ public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
     """)
     Page<BookmarkDTO> searchBookmarks(String query, Pageable pageable);
 
-    Page<BookmarkVM> findByTitleContainsIgnoreCase(String query, Pageable pageable);
+    Page<BookmarkDTO> findByTitleContainsIgnoreCase(String query, Pageable pageable);
 }
