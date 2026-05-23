@@ -1,9 +1,9 @@
 import React from "react";
 import Link from 'next/link'
-import {BookmarksResponse} from "../services/models";
+import {BookmarkResponse} from "../services/models";
 
 interface PaginationProps {
-    bookmarks: BookmarksResponse
+    bookmarks: BookmarkResponse
     query?: string
 }
 

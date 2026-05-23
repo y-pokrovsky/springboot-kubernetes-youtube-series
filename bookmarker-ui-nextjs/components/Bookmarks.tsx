@@ -1,6 +1,7 @@
 import React from "react";
 import Bookmark from "./Bookmark";
 import Pagination from "./Pagination";
+import {BookmarkResponse} from "../services/models";
 
 interface BookmarksProps {
     bookmarks: BookmarkResponse,

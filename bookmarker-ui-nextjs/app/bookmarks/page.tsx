@@ -8,7 +8,7 @@ import SearchForm from "../../components/SearchForm"
 //     titles: string[]
 // }
 
-const Home: NextPage = async ({searchParams, }: {searchParams: Promise<{ [key: string]: string | string[] | undefined }>;}) => {
+const Home = async ({searchParams, }: {searchParams: Promise<{ [key: string]: string | undefined }>;}) => {
 
   const {page = 1, query = ""} = await searchParams
 

@@ -1,4 +1,5 @@
 import React from "react";
+import type {Bookmark} from "../services/models";
 import Link from "next/link";
 
 interface BookmarkProps {
