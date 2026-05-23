@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import {BookmarkResponse} from "../../services/models";
 import {fetchBookmarks} from "../../services/api";
 import Bookmarks from "../../components/Bookmarks"
+import SearchForm from "../../components/SearchForm"
 
 // interface HomeProps {
 //     titles: string[]
@@ -9,13 +10,14 @@ import Bookmarks from "../../components/Bookmarks"
 
 const Home: NextPage = async ({searchParams, }: {searchParams: Promise<{ [key: string]: string | string[] | undefined }>;}) => {
 
-  const {page = 1} = await searchParams
+  const {page = 1, query = ""} = await searchParams
 
-  const bookmarks: BookmarkResponse = await fetchBookmarks(parseInt(page))
+  const bookmarks: BookmarkResponse = await fetchBookmarks(parseInt(String(page)), String(query))
 
   return (
     <div>
-        <Bookmarks bookmarks={bookmarks} />
+        <SearchForm />
+        <Bookmarks bookmarks={bookmarks} query={query} />
     </div>
   );
 }
