@@ -129,8 +129,13 @@
 				<configuration>
 					<image>
 						<name>ypokrovsky/bookmarker-api</name>
+						<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 						<!-- Используем базовый стек вместо tiny, чтобы добавить bash и другие утилиты -->
 						<builder>paketobuildpacks/builder-jammy-base</builder>
+						<env>
+							<BP_OCI_UID>0</BP_OCI_UID>
+							<BP_OCI_GID>0</BP_OCI_GID>
+						</env>
 					</image>
 
 					<excludes>
