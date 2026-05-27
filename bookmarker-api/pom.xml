@@ -129,7 +129,10 @@
 				<configuration>
 					<image>
 						<name>ypokrovsky/bookmarker-api</name>
+						<!-- Используем базовый стек вместо tiny, чтобы добавить bash и другие утилиты -->
+						<builder>paketobuildpacks/builder-jammy-base</builder>
 					</image>
+
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
